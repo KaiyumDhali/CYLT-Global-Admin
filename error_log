@@ -1,0 +1,7 @@
+[07-Oct-2025 06:15:54 UTC] PHP Warning:  require_once(/home/nrbsoftware/public_html/backend/public/bootstrap/app.php): Failed to open stream: No such file or directory in /home/nrbsoftware/public_html/backend/public/index.php on line 18
+[07-Oct-2025 06:15:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/nrbsoftware/public_html/backend/public/bootstrap/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nrbsoftware/public_html/backend/public/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/nrbsoftware/public_html/backend/public/index.php on line 18
+[07-Oct-2025 06:19:31 UTC] PHP Warning:  symlink(): No such file or directory in /home/nrbsoftware/public_html/backend/public/symlink.php on line 6
+[07-Oct-2025 06:23:15 UTC] PHP Warning:  symlink(): No such file or directory in /home/nrbsoftware/public_html/backend/public/symlink.php on line 6
