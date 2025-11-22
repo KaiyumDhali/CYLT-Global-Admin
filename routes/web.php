@@ -42,20 +42,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-//product
-        //frontend
- Route::get('/products', [ProductController::class, 'index'])->name('product.index');
- 
-       //admin
+// FRONTEND product
+Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+
+
+// ADMIN product routes
+Route::prefix('products')->group(function () {
+
     Route::get('/show', [ProductController::class, 'list'])->name('products.list');
     Route::get('/create', [ProductController::class, 'create'])->name('products.create');
     Route::post('/store', [ProductController::class, 'store'])->name('products.store');
+
     Route::get('/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/{id}', [ProductController::class, 'update'])->name('products.update');
-    Route::delete('/{id}', [ProductController::class, 'destroy'])->name('products.destroy');;
-Route::post('/products/delete-image', [ProductController::class, 'deleteImage'])
-     ->name('products.image.delete');
+    Route::delete('/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
+    Route::post('/delete-image', [ProductController::class, 'deleteImage'])->name('products.image.delete');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
